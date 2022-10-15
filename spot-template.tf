@@ -33,4 +33,6 @@ resource "aws_spot_instance_request" "%%instancename%%" {
   tags = {
     Name = "CheapWorker"
   }
+  
+  wait_for_fulfillment = true
 }
