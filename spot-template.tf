@@ -13,10 +13,6 @@ resource "aws_spot_instance_request" "%%instancename%%" {
   spot_price    = "0.03"
 
   key_name      = aws_key_pair.%%keyname%%.key_name
-  vpc_security_group_ids = [
-    aws_security_group.ssh.id,
-    data.aws_security_group.default.id
-  ]
 
   tags = {
     Name = "CheapWorker"
