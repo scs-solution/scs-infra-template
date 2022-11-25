@@ -22,5 +22,5 @@ resource "aws_spot_instance_request" "%%instancename%%" {
 }
 
 resource "aws_eip" "eip-%%instancename%%" {
-  instance = aws_spot_instance_request.%%instancename%%.id
+  instance = aws_spot_instance_request.%%instancename%%.spot_instance_id
 }
