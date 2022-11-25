@@ -24,7 +24,7 @@ resource "aws_spot_instance_request" "%%instancename%%" {
 resource "time_sleep" "wait_30_seconds" {
   depends_on = [aws_spot_instance_request.%%instancename%%]
 
-  create_duration = "60s"
+  create_duration = "30s"
 }
 
 resource "aws_eip" "eip-%%instancename%%" {
