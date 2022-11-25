@@ -23,5 +23,5 @@ resource "aws_spot_instance_request" "%%instancename%%" {
 
 resource "aws_eip" "eip-%%instancename%%" {
   instance = aws_spot_instance_request.%%instancename%%.spot_instance_id
-  depends_on = ["aws_instance.%%instancename%%"]
+  depends_on = ["aws_spot_instance_request.%%instancename%%.spot_instance_id"]
 }
