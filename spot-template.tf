@@ -20,3 +20,7 @@ resource "aws_spot_instance_request" "%%instancename%%" {
   
   wait_for_fulfillment = true
 }
+
+resource "aws_spot_instance_request" "eip-%%instancename%%" {
+  instance = aws_instance.%%instancename%%.id
+}
