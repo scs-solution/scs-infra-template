@@ -20,5 +20,5 @@ resource "time_sleep" "wait_30_seconds_%%instancename%%" {
 
 resource "aws_eip" "eip-%%instancename%%" {
   instance = aws_spot_instance_request.%%instancename%%.spot_instance_id
-  depends_on = [time_sleep.wait_30_seconds]
+  depends_on = [time_sleep.wait_30_seconds_%%instancename%%]
 }
