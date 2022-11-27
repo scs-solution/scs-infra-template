@@ -3,7 +3,7 @@ resource "aws_key_pair" "%%keyname%%" {
   public_key = file("%%keyname%%.pub")
 }
 
-data "aws_security_group" "default" {
+data "aws_security_group" "default_%%instancename%%" {
   name = "default"
 }
 
@@ -21,7 +21,7 @@ resource "aws_spot_instance_request" "%%instancename%%" {
   wait_for_fulfillment = true
 }
 
-resource "time_sleep" "wait_30_seconds" {
+resource "time_sleep" "wait_30_seconds_%%instancename%%" {
   depends_on = [aws_spot_instance_request.%%instancename%%]
 
   create_duration = "30s"
